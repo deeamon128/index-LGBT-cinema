@@ -1,0 +1,10 @@
+.trending {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.search {
+  display: flex;
+  margin: 15px 0;
+}
