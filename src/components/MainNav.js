@@ -5,6 +5,7 @@ import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import TvIcon from "@material-ui/icons/Tv";
 import MovieIcon from "@material-ui/icons/Movie";
 import SearchIcon from "@material-ui/icons/Search";
+import VisibilityIcon from '@material-ui/icons//Visibility';
 import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles({
@@ -51,6 +52,11 @@ export default function SimpleBottomNavigation() {
         style={{ color: "white" }}
         label="Search"
         icon={<SearchIcon />}
+      />
+      <BottomNavigationAction
+        style={{ color: "white" }}
+        label="Watch List"
+        icon={<VisibilityIcon />}
       />
     </BottomNavigation>
   );
