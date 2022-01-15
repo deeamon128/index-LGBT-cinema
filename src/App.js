@@ -5,6 +5,7 @@ import SimpleBottomNavigation from "./components/MainNav";
 import Movies from "./Pages/Movies";
 import Series from "./Pages/Series";
 import Search from "./Pages/Search";
+import WatchList from './Pages/WatchList';
 import { Container } from "@material-ui/core";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Movies />} />
             <Route path="/series" element={<Series />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/watchlist" element={<WatchList />} />
           </Routes>
         </Container>
       </div>

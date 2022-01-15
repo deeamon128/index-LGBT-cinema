@@ -27,6 +27,7 @@ export default function SimpleBottomNavigation() {
     if (value === 0) navigate("/");
     else if (value === 1) navigate("/series");
     else if (value === 2) navigate("/search");
+    else if (value === 3) navigate("/watchlist");
   }, [value, navigate]);
 
   return (
