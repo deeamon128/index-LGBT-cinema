@@ -1,4 +1,6 @@
 import { Badge } from "@material-ui/core";
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import CloseIcon from '@material-ui/icons/Close';
 import { img_300, unavailable } from "../../config/config";
 import "./SingleContent.css";
 import ContentModal from "../ContentModal/ContentModal";
@@ -23,10 +25,10 @@ const SingleContent = ({
         alt={title}
       />
       <b className="title">{title}</b>
-      <span className="subTitle">
-        {media_type === "tv" ? "TV Series" : "Movie"}
-        <span className="subTitle">{date}</span>
-      </span>
+      <div className="subTitle">
+        <VisibilityIcon className="addButton"/>
+        <CloseIcon className="removeButton"/>
+      </div>
     </ContentModal>
   );
 };
