@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
@@ -13,6 +13,9 @@ import "./ContentModal.css";
 import { Button } from "@material-ui/core";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import Carousel from "../Carousel/Carousel";
+import VisibilityIcon from '@material-ui/icons/Visibility';
+import CloseIcon from '@material-ui/icons/Close';
+import { GlobalContext } from "../../context/GlobalState";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -45,6 +48,9 @@ export default function TransitionsModal({ children, media_type, id }) {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const{ removeMovieFromWatchList,
+    addMovieToWatchList,} = useContext(GlobalContext);
 
   const fetchData = async () => {
     const { data } = await axios.get(
@@ -144,6 +150,12 @@ export default function TransitionsModal({ children, media_type, id }) {
                   >
                     Watch the Trailer
                   </Button>
+                  <div className="subTitle">
+                    <VisibilityIcon className="addButton"
+                    onClick={() => addMovieToWatchList(id)}/>
+                    <CloseIcon className="removeButton" 
+                    onClick={() => removeMovieFromWatchList(id)}/>
+                </div>
                 </div>
               </div>
             </div>

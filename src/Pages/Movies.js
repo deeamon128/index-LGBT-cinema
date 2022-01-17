@@ -21,6 +21,7 @@ const Movies = () => {
     );
     setContent(data.results);
     setNumOfPages(data.total_pages);
+    console.log(data)
   };
 
   useEffect(() => {
@@ -51,6 +52,7 @@ const Movies = () => {
               date={c.first_air_date || c.release_date}
               media_type="movie"
               vote_average={c.vote_average}
+              content = {content}
             />
           ))}
       </div>

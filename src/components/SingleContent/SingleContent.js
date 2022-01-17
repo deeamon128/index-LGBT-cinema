@@ -1,18 +1,22 @@
+import React, { useContext } from "react"; 
 import { Badge } from "@material-ui/core";
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import CloseIcon from '@material-ui/icons/Close';
 import { img_300, unavailable } from "../../config/config";
 import "./SingleContent.css";
 import ContentModal from "../ContentModal/ContentModal";
+import { GlobalContext } from "../../context/GlobalState";
 
 const SingleContent = ({
   id,
   poster,
   title,
-  date,
   media_type,
   vote_average,
-}) => {
+}) => { 
+  const{ removeMovieFromWatchList,
+    addMovieToWatchList,} = useContext(GlobalContext);
+
   return (
     <ContentModal media_type={media_type} id={id}>
       <Badge
@@ -26,8 +30,10 @@ const SingleContent = ({
       />
       <b className="title">{title}</b>
       <div className="subTitle">
-        <VisibilityIcon className="addButton"/>
-        <CloseIcon className="removeButton"/>
+        <VisibilityIcon className="addButton"
+        onClick={() => addMovieToWatchList(id)}/>
+        <CloseIcon className="removeButton" 
+        onClick={() => removeMovieFromWatchList(id)}/>
       </div>
     </ContentModal>
   );
