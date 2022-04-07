@@ -8,6 +8,7 @@ import ContentModal from "../ContentModal/ContentModal";
 import { GlobalContext } from "../../context/GlobalState";
 
 const SingleContent = ({
+  c,
   id,
   poster,
   title,
@@ -18,7 +19,7 @@ const SingleContent = ({
     addMovieToWatchList,} = useContext(GlobalContext);
 
   return (
-    <ContentModal media_type={media_type} id={id}>
+    <ContentModal media_type={media_type} id={id} >
       <Badge
         badgeContent={vote_average}
         color={vote_average > 6 ? "primary" : "secondary"}

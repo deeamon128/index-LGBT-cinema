@@ -151,11 +151,21 @@ export default function TransitionsModal({ children, media_type, id }) {
                     Watch the Trailer
                   </Button>
                   <div className="subTitle">
-                    <VisibilityIcon className="addButton"
-                    onClick={() => addMovieToWatchList(id)}/>
-                    <CloseIcon className="removeButton" 
-                    onClick={() => removeMovieFromWatchList(id)}/>
-                </div>
+                    <Button 
+                      startIcon={<VisibilityIcon/>} 
+                      style={{ color: "white" }}
+                      className="addButton"
+                      onClick={() => addMovieToWatchList(id)} 
+                      >
+                    </Button>
+                    <Button 
+                      startIcon={<CloseIcon/>} 
+                      style={{ color: "white" }}
+                      className="removeButton" 
+                      onClick={() => removeMovieFromWatchList(id)}
+                      >
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext} from 'react';
 import SingleContent from "../components/SingleContent/SingleContent";
-import CustomPagination from "../components/Pagination/CustomPagination";
 import './Pages.css';
+import { GlobalContext } from "../context/GlobalState";
 
 
-const WatchList = ({content}) => {
+const WatchList = () => {
+  const { watchlist } = useContext(GlobalContext);
+
   return (
     <div>
       <span className="pageTitle">Your Watch list</span>
       <div className="trending">
-        {content &&
-          content.map((c) => (
+        {watchlist.map((c) => (
             <SingleContent
               key={c.id}
               id={c.id}
@@ -19,6 +20,7 @@ const WatchList = ({content}) => {
               date={c.first_air_date || c.release_date}
               media_type={"movie" || "tv"}
               vote_average={c.vote_average}
+              type="watchlist"
             />
           ))}
       </div>
