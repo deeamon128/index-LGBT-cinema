@@ -1,10 +1,10 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Genres from "../components/Genres/Genres";
 import SingleContent from "../components/SingleContent/SingleContent";
 import useGenre from "../hooks/useGenre";
 import CustomPagination from "../components/Pagination/CustomPagination";
-import './Pages.css'
+import './Pages.css';
 
 const Movies = () => {
   const [genres, setGenres] = useState([]);
